@@ -15,9 +15,4 @@ class Produto extends Model
     {
         return $this->belongsTo('App\Models\Campanha');
     }
-
-    public function desconto()
-    {
-        return $this->belongsTo('App\Models\Desconto');
-    }
 }
