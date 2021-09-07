@@ -9,10 +9,15 @@ class Produto extends Model
 {
     use HasFactory;
     protected $table = 'produtos';
-    protected $fillable = ['nome', 'campanha_id'];
+    protected $fillable = ['nome', 'campanha_id', 'desconto_id'];
 
     public function campanha()
     {
         return $this->belongsTo('App\Models\Campanha');
+    }
+
+    public function desconto()
+    {
+        return $this->belongsTo('App\Models\Desconto');
     }
 }
