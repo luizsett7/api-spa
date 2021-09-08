@@ -35,15 +35,19 @@ class CampanhaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {            
-        $campanha = Campanha::where('grupo_id','=',$request->grupo_id)->first();
-        if($campanha == null){
+    {                  
+        if($request->ativo == 0){
             Campanha::create($request->all());
-        }else{              
-            if($campanha->ativo == 0){        
+        }else{
+            $campanha = Campanha::where('grupo_id','=',$request->grupo_id)->first();
+            if($campanha == null){
                 Campanha::create($request->all());
-            }else{
-                return "Grupo já está com campanha ativa";
+            }else{              
+                if($campanha->ativo == 0){        
+                    Campanha::create($request->all());
+                }else{
+                    return "Grupo já está com campanha ativa";
+                }
             }
         }
     }
