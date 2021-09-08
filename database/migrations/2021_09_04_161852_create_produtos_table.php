@@ -16,6 +16,8 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
+            $table->unsignedBigInteger('campanha_id');
+            $table->foreign('campanha_id')->references('id')->on('campanhas')->onDelete('cascade');
             $table->unsignedBigInteger('desconto_id');
             $table->foreign('desconto_id')->references('id')->on('descontos')->onDelete('cascade');
             $table->timestamps();

@@ -9,7 +9,7 @@ class Desconto extends Model
 {
     use HasFactory;
     protected $table = 'descontos';
-    protected $fillable = ['nome'];
+    protected $fillable = ['descricao', 'valor'];
 
     public function produtos()
     {

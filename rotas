@@ -1,0 +1,14 @@
+Grupo
+http://localhost:8000/api/grupos?nome=Grupo1
+
+Cidade
+http://localhost:8000/api/cidades?nome=Cidade1&grupo_id=1
+
+Campanha
+http://localhost:8000/api/campanhas?nome=Campanha1&ativo=0&grupo_id=1
+
+Desconto
+http://localhost:8000/api/descontos?descricao=Desconto1&valor=100
+
+Produto
+http://localhost:8000/api/produtos?descricao=Produto1&campanha_id=1&desconto_id=1
