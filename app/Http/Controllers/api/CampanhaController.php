@@ -39,16 +39,7 @@ class CampanhaController extends Controller
         if($request->ativo == 0){
             Campanha::create($request->all());
         }else{
-            $campanha = Campanha::where('grupo_id','=',$request->grupo_id)->first();
-            if($campanha == null){
-                Campanha::create($request->all());
-            }else{              
-                if($campanha->ativo == 0){        
-                    Campanha::create($request->all());
-                }else{
-                    return "Grupo já está com campanha ativa";
-                }
-            }
+            return "Grupo já está com campanha ativa";        
         }
     }
 
